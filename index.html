@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sierra’s Totally Real Homepage ✨</title>
+  <meta name="description" content="A fun Y2K/90s-style personal site — not a traditional portfolio." />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="headerPlate">
+    <h1 class="wordart">Sierra’s Totally Real Portfolio</h1>
+    <div class="wrap">
+    <div class="topbar">
+    
+      <div class="siteMeta">
+        <span class="siteMetaItem">Visitor #: <strong id="visitCount">000001</strong></span>
+        <span class="siteMetaItem">Mood: <strong id="mood">curious</strong></span>
+    </div>
+    </div>
+    <div class="marquee">
+      <p>
+       STATUS: building quietly ✦ teaching ✦ experimenting with land
+
+      </p>
+    </div>
+    </div>
+    <main class="panel">
+      <header class="panelHeader">
+        <div class="title">
+          <span class="pixelDot"></span>
+           <span class="badge blink">⚠ best viewed with imagination ⚠</span>
+        </div>
+        <div class="windowBtns">
+          <span class="winBtn"></span>
+          <span class="winBtn"></span>
+          <span class="winBtn"></span>
+        </div>
+      </header>
+
+      <div class="panelBody">
+        <nav class="tabs">
+          <button class="tab" aria-selected="true" data-target="home">🏠 Home</button>
+          <button class="tab" data-target="about">🙂 About</button>
+          <button class="tab" data-target="stuff">🧩 Stuff I’ve Made</button>
+          <button class="tab" data-target="irl">🌱 IRL Projects</button>
+        </nav>
+
+        <!-- HOME -->
+        <section id="home" class="section active">
+          <div class="grid">
+            <div class="card">
+              <h3>Welcome</h3>
+              <p>
+                Hi, I’m <strong>Sierra</strong>. I build systems—digital,
+                educational, emotional, and physical.
+              </p>
+
+              <div class="btnRow">
+                <a class="btn primary" href="Sierra Adams Resume.pdf">📄 Boring Resume</a>
+                <a class="btn" href="https://github.com/SierraAdamsDev">💾 GitHub</a>
+                <a class="btn" href="https://www.linkedin.com/in/sierra-adams/">🔗 LinkedIn</a>
+              </div>
+
+              
+            </div>
+
+            <div class="card">
+              <h3>Interests</h3>
+              <ul class="iconList">
+                <li><span class="icon">🧠</span> Mental Health</li>
+                <li><span class="icon">🍎</span> Education</li>
+                <li><span class="icon">🧱</span> Building Things</li>
+                <li><span class="icon">🌱</span> Land</li>
+              </ul>
+
+              <div class="btnRow">
+                <button class="btn" id="musicToggle">🎵 Music: OFF</button>
+                <button class="btn" id="sparkleBtn">✨ Add Sparkles</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+          <div class="card">
+            <h3>About Me</h3>
+             <p>This isn’t an elevator pitch.</p>
+                    <p>
+                     I teach.<br>
+                     I build.<br>
+                     I experiment.<br>
+                     I’m interested in how systems affect people — especially when they’re overwhelmed.
+                    </p>
+
+                 <p>
+                    If you’re looking for titles, they’re in the resume.<br>
+                    If you’re looking for context, you’re already here.
+                </p>
+          </div>
+        </section>
+
+        <!-- STUFF -->
+        <section id="stuff" class="section">
+          <div class="card">
+            <h3>Grit &amp; Flow Labs</h3>
+
+             <p>
+            A small studio where I build apps, tools, and experiments that are meant to
+            feel good to use.
+            </p>
+
+            <p>
+            Ongoing. Always changing.
+            </p>
+
+        <p class="tiny">
+        (This link opens a more polished corner of the internet.)
+        </p>
+        <a
+         href="https://gritandflowlabs.com"
+         target="_blank"
+        rel="noopener"
+        class="btn primary"
+        >
+        Visit Grit &amp; Flow Labs →
+        </a>
+          </div>
+        </section>
+
+        <!-- IRL -->
+        <section id="irl" class="section">
+          <div class="card">
+            <h3>Lee Holdings Group</h3>
+
+    <p>
+    Real-world projects focused on land, planning, and long-term development.
+    </p>
+
+    <p>
+    Slower timelines. Bigger consequences. Still intentional.
+    </p>
+
+    <p class="tiny">
+    (This one lives firmly offline, but the site tracks the thinking.)
+    </p>
+
+    <a
+    href="https://leeholdingsgroup.netlify.app/"
+    target="_blank"
+    rel="noopener"
+    class="btn primary"
+    >
+    Visit Lee Holdings Group →
+    </a>
+          </div>
+        </section>
+
+       
+    </main>
+  </div>
+<footer class="siteFooter">
+  <span class="tiny">© Sierra · under construction · occasionally online</span>
+</footer>
+
+
+
+  <audio id="bgMusic" loop>
+  <source src="Erykah Badu - Cleva.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+    </audio>
+
+
+<script src="script.js"></script>
+</body>
+</html>
