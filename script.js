@@ -1,59 +1,73 @@
-const tabs = document.querySelectorAll(".tab");
-const sections = document.querySelectorAll(".section");
+const tabLinks = document.querySelectorAll(".tabLink");
+const contentSections = document.querySelectorAll(".contentSection");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(t => t.setAttribute("aria-selected", "false"));
-    tab.setAttribute("aria-selected", "true");
+tabLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
 
-    sections.forEach(s => s.classList.remove("active"));
-    document.getElementById(tab.dataset.target).classList.add("active");
+    const target = link.dataset.target;
+    if (!target) return;
+
+    tabLinks.forEach((item) => item.classList.remove("active"));
+    link.classList.add("active");
+
+    contentSections.forEach((section) => section.classList.remove("active"));
+    const activeSection = document.getElementById(target);
+    if (activeSection) {
+      activeSection.classList.add("active");
+    }
   });
 });
 
+/* Visitor counter */
+const visitEl = document.getElementById("visitCount");
+if (visitEl) {
+  const key = "y2k_visits";
+  const visits = Number(localStorage.getItem(key) || 0) + 1;
+  localStorage.setItem(key, visits);
+  visitEl.textContent = String(visits).padStart(6, "0");
+}
 
-// Visitor counter
-const key = "y2k_visits";
-const visits = Number(localStorage.getItem(key) || 0) + 1;
-localStorage.setItem(key, visits);
-document.getElementById("visitCount").textContent =
-  String(visits).padStart(6, "0");
+/* Mood */
+const moodEl = document.getElementById("mood");
+if (moodEl) {
+  const moods = ["curious", "building", "soft but focused", "shipping"];
+  moodEl.textContent = moods[Math.floor(Math.random() * moods.length)];
+}
 
-// Mood
-const moods = ["curious", "building", "soft but focused", "shipping"];
-document.getElementById("mood").textContent =
-  moods[Math.floor(Math.random() * moods.length)];
+/* Sparkles */
+const sparkleBtn = document.getElementById("sparkleBtn");
+if (sparkleBtn) {
+  sparkleBtn.addEventListener("click", () => {
+    for (let i = 0; i < 15; i++) {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.textContent = "✨";
+      sparkle.style.position = "fixed";
+      sparkle.style.left = Math.random() * 100 + "vw";
+      sparkle.style.top = "-20px";
+      sparkle.style.fontSize = "18px";
+      document.body.appendChild(sparkle);
 
+      sparkle.animate(
+        [
+          { transform: "translateY(0)", opacity: 1 },
+          { transform: "translateY(110vh)", opacity: 0 }
+        ],
+        { duration: 1200 }
+      );
 
+      setTimeout(() => sparkle.remove(), 1200);
+    }
+  });
+}
 
-// Sparkles
-document.getElementById("sparkleBtn")?.addEventListener("click", () => {
-  for (let i = 0; i < 15; i++) {
-    const s = document.createElement("div");
-    s.textContent = "✨";
-    s.style.position = "fixed";
-    s.style.left = Math.random() * 100 + "vw";
-    s.style.top = "-20px";
-    s.style.fontSize = "18px";
-    document.body.appendChild(s);
-
-    s.animate([
-      { transform: "translateY(0)", opacity: 1 },
-      { transform: "translateY(110vh)", opacity: 0 }
-    ], { duration: 1200 });
-
-    setTimeout(() => s.remove(), 1200);
-  }
-});
-
-
-// Music
+/* Music toggle */
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
 if (music && musicBtn) {
   music.volume = 0.3;
-
   let isPlaying = false;
 
   musicBtn.addEventListener("click", () => {
@@ -67,4 +81,3 @@ if (music && musicBtn) {
     isPlaying = !isPlaying;
   });
 }
-

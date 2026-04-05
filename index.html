@@ -1,158 +1,303 @@
-<main class="myspacePage">
-  <div class="myspaceTopBar">
-    <div class="myspaceLogo">sierra-space</div>
-    <div class="myspaceTopLinks">
-      <a href="#">Home</a>
-      <a href="#">Browse</a>
-      <a href="#">Blog</a>
-      <a href="#">Favorites</a>
-      <a href="#">Music</a>
-    </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sierra’s Totally Real Portfolio ✨</title>
+  <meta
+    name="description"
+    content="A MySpace-inspired non-traditional personal portfolio for Sierra Adams."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="pageShell">
+    <header class="topHeader">
+      <div class="topHeaderInner">
+        <div class="brandRow">
+          <div class="brand">sierra-space</div>
+          <div class="topRightLinks">
+            <a href="#about">About</a>
+            <a href="#writing">Writing</a>
+            <a href="#top8">Top 8</a>
+          </div>
+        </div>
+
+        <div class="searchRow">
+          <input class="searchInput" type="text" placeholder="Search my space..." />
+          <select class="searchSelect">
+            <option>MySpace</option>
+            <option>Projects</option>
+            <option>Writing</option>
+          </select>
+          <button class="searchBtn" type="button">Search</button>
+        </div>
+      </div>
+
+      <nav class="navBar">
+        <a href="#" class="tabLink active" data-target="home">Home</a>
+        <a href="#" class="tabLink" data-target="about">About</a>
+        <a href="#" class="tabLink" data-target="stuff">Stuff I've Made</a>
+        <a href="#" class="tabLink" data-target="irl">IRL Projects</a>
+        <a href="#" class="tabLink" data-target="writing">Writing</a>
+      </nav>
+    </header>
+
+    <main class="profilePage">
+      <section class="leftColumn">
+        <div class="profileIdentity">
+          <h1>Sierra Adams</h1>
+
+          <div class="profileTop">
+            <div class="profileImagePlaceholder">
+              <span>photo coming soon</span>
+            </div>
+
+            <div class="profileFacts">
+              <p>"soft but focused"</p>
+              <p>Educator, Builder</p>
+              <p>Atlanta, Georgia</p>
+              <p>United States</p>
+            </div>
+          </div>
+
+          <div class="profileQuickStats">
+            <p><strong>Mood:</strong> <span id="mood">curious</span></p>
+            <p><strong>Visitor #:</strong> <span id="visitCount">000001</span></p>
+            <p><strong>Status:</strong> building quietly</p>
+          </div>
+
+          <div class="viewLinks">
+            View My:
+            <a href="Sierra Adams Resume.pdf">Resume</a> |
+            <a href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">GitHub</a> |
+            <a href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <section class="module">
+          <div class="moduleHeader blue">Contacting Sierra</div>
+          <div class="moduleBody contactGrid">
+            <a href="Sierra Adams Resume.pdf">📄 Resume</a>
+            <a href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">💾 GitHub</a>
+            <a href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+            <a href="https://gritandflowlabs.com" target="_blank" rel="noopener">✨ Grit &amp; Flow Labs</a>
+            <a href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">🌱 Lee Holdings Group</a>
+            <a href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">📖 My Book</a>
+          </div>
+        </section>
+
+        <section class="module">
+          <div class="moduleHeader blue">Sierra Space URL</div>
+          <div class="moduleBody urlBox">
+            https://sierra-space.netlify.app
+          </div>
+        </section>
+
+        <section class="module">
+          <div class="moduleHeader blue">Sierra's Interests</div>
+          <div class="moduleBody interestTable">
+            <div class="interestRow">
+              <div class="interestLabel">General</div>
+              <div class="interestValue">
+                Mental Health, Education, Building Things, Land, Writing, Design, Systems
+              </div>
+            </div>
+            <div class="interestRow">
+              <div class="interestLabel">Currently</div>
+              <div class="interestValue">
+                Teaching, building products, writing, and working on long-term development projects
+              </div>
+            </div>
+            <div class="interestRow">
+              <div class="interestLabel">Music</div>
+              <div class="interestValue">
+                Erykah Badu — Cleva
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="module">
+          <div class="moduleHeader blue">Site Extras</div>
+          <div class="moduleBody extrasRow">
+            <button class="msButton" id="musicToggle" type="button">🎵 Music: OFF</button>
+            <button class="msButton" id="sparkleBtn" type="button">✨ Add Sparkles</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="rightColumn">
+        <section class="heroStatus">
+          <div class="heroStatusInner">
+            Sierra is building quietly ✦ teaching ✦ experimenting with land
+          </div>
+        </section>
+
+        <section id="home" class="contentSection active">
+          <section class="module">
+            <div class="moduleHeader orange">Sierra's Blurbs</div>
+            <div class="moduleBody">
+              <h3>About me:</h3>
+              <p>
+                Hi, I’m <strong>Sierra</strong>. I build systems—digital, educational,
+                emotional, and physical.
+              </p>
+              <p>
+                This site is not a traditional portfolio. It’s a space that holds the work,
+                the thinking, and the things I’m building over time.
+              </p>
+
+              <h3>What I'm building:</h3>
+              <p>
+                A mix of digital products, writing, real-world projects, and ideas that do
+                not fit neatly into one category.
+              </p>
+            </div>
+          </section>
+
+          <section id="top8" class="module">
+            <div class="moduleHeader blue">Sierra's Top 8</div>
+            <div class="moduleBody">
+              <div class="top8Grid">
+                <a class="topFriend" href="https://gritandflowlabs.com" target="_blank" rel="noopener">
+                  <div class="topFriendPic">GF</div>
+                  <div class="topFriendName">Grit &amp; Flow Labs</div>
+                </a>
+
+                <a class="topFriend" href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">
+                  <div class="topFriendPic">LH</div>
+                  <div class="topFriendName">Lee Holdings Group</div>
+                </a>
+
+                <a class="topFriend" href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">
+                  <div class="topFriendPic">BK</div>
+                  <div class="topFriendName">My Book</div>
+                </a>
+
+                <a class="topFriend" href="Sierra Adams Resume.pdf">
+                  <div class="topFriendPic">RS</div>
+                  <div class="topFriendName">Resume</div>
+                </a>
+
+                <a class="topFriend" href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">
+                  <div class="topFriendPic">GH</div>
+                  <div class="topFriendName">GitHub</div>
+                </a>
+
+                <a class="topFriend" href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">
+                  <div class="topFriendPic">IN</div>
+                  <div class="topFriendName">LinkedIn</div>
+                </a>
+
+                <div class="topFriend empty">
+                  <div class="topFriendPic">?</div>
+                  <div class="topFriendName">Coming Soon</div>
+                </div>
+
+                <div class="topFriend empty">
+                  <div class="topFriendPic">?</div>
+                  <div class="topFriendName">Coming Soon</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section id="about" class="contentSection">
+          <section class="module">
+            <div class="moduleHeader orange">About Me</div>
+            <div class="moduleBody">
+              <p><strong>This isn’t an elevator pitch.</strong></p>
+
+              <p>
+                I teach.<br />
+                I build.<br />
+                I experiment.<br />
+                I’m interested in how systems affect people — especially when they’re overwhelmed.
+              </p>
+
+              <p>
+                If you’re looking for titles, they’re in the resume.<br />
+                If you’re looking for context, you’re already here.
+              </p>
+            </div>
+          </section>
+        </section>
+
+        <section id="stuff" class="contentSection">
+          <section class="module">
+            <div class="moduleHeader orange">Stuff I've Made</div>
+            <div class="moduleBody">
+              <h3>Grit &amp; Flow Labs</h3>
+              <p>
+                A small studio where I build apps, tools, and experiments that are meant to
+                feel good to use.
+              </p>
+              <p>
+                Ongoing. Always changing.
+              </p>
+              <p class="tinyNote">
+                (This link opens a more polished corner of the internet.)
+              </p>
+              <a class="textLink" href="https://gritandflowlabs.com" target="_blank" rel="noopener">
+                Visit Grit &amp; Flow Labs →
+              </a>
+            </div>
+          </section>
+        </section>
+
+        <section id="irl" class="contentSection">
+          <section class="module">
+            <div class="moduleHeader orange">IRL Projects</div>
+            <div class="moduleBody">
+              <h3>Lee Holdings Group</h3>
+              <p>
+                Real-world projects focused on land, planning, and long-term development.
+              </p>
+              <p>
+                Slower timelines. Bigger consequences. Still intentional.
+              </p>
+              <p class="tinyNote">
+                (This one lives firmly offline, but the site tracks the thinking.)
+              </p>
+              <a class="textLink" href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">
+                Visit Lee Holdings Group →
+              </a>
+            </div>
+          </section>
+        </section>
+
+        <section id="writing" class="contentSection">
+          <section class="module">
+            <div class="moduleHeader orange">Writing</div>
+            <div class="moduleBody">
+              <p>
+                I write about work, systems, meetings, and the friction people are expected
+                to normalize.
+              </p>
+              <p>
+                My first book lives here now too, which still feels a little wild.
+              </p>
+              <a class="textLink" href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">
+                View the book →
+              </a>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer class="siteFooter">
+      <span>© Sierra · under construction · occasionally online</span>
+    </footer>
   </div>
 
-  <div class="myspaceContent">
-    <!-- LEFT COLUMN -->
-    <aside class="leftColumn">
-      <section class="module profileIntro">
-        <h1>Sierra Adams</h1>
+  <audio id="bgMusic" loop>
+    <source src="Erykah Badu - Cleva.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
 
-        <div class="profileTop">
-          <div class="profilePhotoPlaceholder">photo coming soon</div>
-
-          <div class="profileMeta">
-            <p>"soft but focused"</p>
-            <p>Educator, Builder</p>
-            <p>Atlanta, Georgia</p>
-            <p>United States</p>
-          </div>
-        </div>
-
-        <div class="profileStats">
-          <p><strong>Mood:</strong> <span id="mood">curious</span></p>
-          <p><strong>Visitor #:</strong> <span id="visitCount">000001</span></p>
-        </div>
-      </section>
-
-      <section class="module contactBox">
-        <div class="moduleHeader blue">Contacting Sierra</div>
-        <div class="moduleBody contactGrid">
-          <a href="Sierra Adams Resume.pdf">📄 Resume</a>
-          <a href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">💾 GitHub</a>
-          <a href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-          <a href="https://gritandflowlabs.com" target="_blank" rel="noopener">✨ Grit &amp; Flow Labs</a>
-        </div>
-      </section>
-
-      <section class="module">
-        <div class="moduleHeader blue">Sierra's Interests</div>
-        <div class="moduleBody interestTable">
-          <div class="interestRow">
-            <div class="interestLabel">General</div>
-            <div class="interestValue">Mental Health, Education, Building Things, Land, Writing, Design, Systems</div>
-          </div>
-          <div class="interestRow">
-            <div class="interestLabel">Currently</div>
-            <div class="interestValue">Teaching, building products, writing, long-term development projects</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="module">
-        <div class="moduleHeader blue">Site Extras</div>
-        <div class="moduleBody extrasRow">
-          <button class="msButton" id="musicToggle">🎵 Music: OFF</button>
-          <button class="msButton" id="sparkleBtn">✨ Add Sparkles</button>
-        </div>
-      </section>
-    </aside>
-
-    <!-- RIGHT COLUMN -->
-    <section class="rightColumn">
-      <section class="module statusBox">
-        <div class="statusInner">
-          Sierra is building quietly ✦ teaching ✦ experimenting with land
-        </div>
-      </section>
-
-      <section class="module">
-        <div class="moduleHeader orange">Sierra's Blurbs</div>
-        <div class="moduleBody">
-          <h3>About me:</h3>
-          <p>
-            This isn’t an elevator pitch.
-          </p>
-          <p>
-            I teach. I build. I experiment. I’m interested in how systems affect people — especially when they’re overwhelmed.
-          </p>
-          <p>
-            If you’re looking for titles, they’re in the resume. If you’re looking for context, you’re already here.
-          </p>
-
-          <h3>What I'm building:</h3>
-          <p>
-            A mix of digital products, writing, real-world projects, and ideas that don’t fit neatly into one category.
-          </p>
-        </div>
-      </section>
-
-      <section class="module">
-        <div class="moduleHeader orange">Writing</div>
-        <div class="moduleBody">
-          <p>
-            I write about work, systems, meetings, and the friction people are expected to normalize.
-          </p>
-          <a class="textLink" href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">
-            View the book →
-          </a>
-        </div>
-      </section>
-
-      <section class="module">
-        <div class="moduleHeader blue">Sierra's Top 8</div>
-        <div class="moduleBody">
-          <div class="top8Grid">
-            <a class="topFriend" href="https://gritandflowlabs.com" target="_blank" rel="noopener">
-              <div class="topFriendPic">GF</div>
-              <div class="topFriendName">Grit &amp; Flow Labs</div>
-            </a>
-
-            <a class="topFriend" href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">
-              <div class="topFriendPic">LH</div>
-              <div class="topFriendName">Lee Holdings Group</div>
-            </a>
-
-            <a class="topFriend" href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">
-              <div class="topFriendPic">BK</div>
-              <div class="topFriendName">Book</div>
-            </a>
-
-            <div class="topFriend empty">
-              <div class="topFriendPic">?</div>
-              <div class="topFriendName">Coming Soon</div>
-            </div>
-
-            <div class="topFriend empty">
-              <div class="topFriendPic">?</div>
-              <div class="topFriendName">Coming Soon</div>
-            </div>
-
-            <div class="topFriend empty">
-              <div class="topFriendPic">?</div>
-              <div class="topFriendName">Coming Soon</div>
-            </div>
-
-            <div class="topFriend empty">
-              <div class="topFriendPic">?</div>
-              <div class="topFriendName">Coming Soon</div>
-            </div>
-
-            <div class="topFriend empty">
-              <div class="topFriendPic">?</div>
-              <div class="topFriendName">Coming Soon</div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-  </div>
-</main>
+  <script src="script.js"></script>
+</body>
+</html>
