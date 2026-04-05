@@ -1,303 +1,499 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sierra’s Totally Real Portfolio ✨</title>
-  <meta
-    name="description"
-    content="A MySpace-inspired non-traditional personal portfolio for Sierra Adams."
-  />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="pageShell">
-    <header class="topHeader">
-      <div class="topHeaderInner">
-        <div class="brandRow">
-          <div class="brand">sierra-space</div>
-          <div class="topRightLinks">
-            <a href="#about">About</a>
-            <a href="#writing">Writing</a>
-            <a href="#top8">Top 8</a>
-          </div>
-        </div>
+* {
+  box-sizing: border-box;
+}
 
-        <div class="searchRow">
-          <input class="searchInput" type="text" placeholder="Search my space..." />
-          <select class="searchSelect">
-            <option>MySpace</option>
-            <option>Projects</option>
-            <option>Writing</option>
-          </select>
-          <button class="searchBtn" type="button">Search</button>
-        </div>
-      </div>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #e9ece8;
+  color: #111;
+}
 
-      <nav class="navBar">
-        <a href="#" class="tabLink active" data-target="home">Home</a>
-        <a href="#" class="tabLink" data-target="about">About</a>
-        <a href="#" class="tabLink" data-target="stuff">Stuff I've Made</a>
-        <a href="#" class="tabLink" data-target="irl">IRL Projects</a>
-        <a href="#" class="tabLink" data-target="writing">Writing</a>
-      </nav>
-    </header>
+a {
+  color: #1F3D2B;
+}
 
-    <main class="profilePage">
-      <section class="leftColumn">
-        <div class="profileIdentity">
-          <h1>Sierra Adams</h1>
+a:hover {
+  color: #C9A24D;
+}
 
-          <div class="profileTop">
-            <div class="profileImagePlaceholder">
-              <span>photo coming soon</span>
-            </div>
+.pageShell {
+  max-width: 1035px;
+  margin: 0 auto;
+  background: #faf8f4;
+  min-height: 100vh;
+  border-left: 1px solid #7a7a7a;
+  border-right: 1px solid #7a7a7a;
+}
 
-            <div class="profileFacts">
-              <p>"soft but focused"</p>
-              <p>Educator, Builder</p>
-              <p>Atlanta, Georgia</p>
-              <p>United States</p>
-            </div>
-          </div>
+/* Top header */
+.topHeader {
+  background: #1F3D2B;
+  color: #fff;
+}
 
-          <div class="profileQuickStats">
-            <p><strong>Mood:</strong> <span id="mood">curious</span></p>
-            <p><strong>Visitor #:</strong> <span id="visitCount">000001</span></p>
-            <p><strong>Status:</strong> building quietly</p>
-          </div>
+.topHeaderInner {
+  padding: 14px 16px 10px;
+}
 
-          <div class="viewLinks">
-            View My:
-            <a href="Sierra Adams Resume.pdf">Resume</a> |
-            <a href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">GitHub</a> |
-            <a href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
+.brandRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
 
-        <section class="module">
-          <div class="moduleHeader blue">Contacting Sierra</div>
-          <div class="moduleBody contactGrid">
-            <a href="Sierra Adams Resume.pdf">📄 Resume</a>
-            <a href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">💾 GitHub</a>
-            <a href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-            <a href="https://gritandflowlabs.com" target="_blank" rel="noopener">✨ Grit &amp; Flow Labs</a>
-            <a href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">🌱 Lee Holdings Group</a>
-            <a href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">📖 My Book</a>
-          </div>
-        </section>
+.brand {
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
 
-        <section class="module">
-          <div class="moduleHeader blue">Sierra Space URL</div>
-          <div class="moduleBody urlBox">
-            https://sierra-space.netlify.app
-          </div>
-        </section>
+.topRightLinks {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
 
-        <section class="module">
-          <div class="moduleHeader blue">Sierra's Interests</div>
-          <div class="moduleBody interestTable">
-            <div class="interestRow">
-              <div class="interestLabel">General</div>
-              <div class="interestValue">
-                Mental Health, Education, Building Things, Land, Writing, Design, Systems
-              </div>
-            </div>
-            <div class="interestRow">
-              <div class="interestLabel">Currently</div>
-              <div class="interestValue">
-                Teaching, building products, writing, and working on long-term development projects
-              </div>
-            </div>
-            <div class="interestRow">
-              <div class="interestLabel">Music</div>
-              <div class="interestValue">
-                Erykah Badu — Cleva
-              </div>
-            </div>
-          </div>
-        </section>
+.topRightLinks a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
 
-        <section class="module">
-          <div class="moduleHeader blue">Site Extras</div>
-          <div class="moduleBody extrasRow">
-            <button class="msButton" id="musicToggle" type="button">🎵 Music: OFF</button>
-            <button class="msButton" id="sparkleBtn" type="button">✨ Add Sparkles</button>
-          </div>
-        </section>
-      </section>
+.searchRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
 
-      <section class="rightColumn">
-        <section class="heroStatus">
-          <div class="heroStatusInner">
-            Sierra is building quietly ✦ teaching ✦ experimenting with land
-          </div>
-        </section>
+.searchInput {
+  width: 100%;
+  max-width: 520px;
+  height: 28px;
+  border: 1px solid #7f7f7f;
+  padding: 4px 8px;
+}
 
-        <section id="home" class="contentSection active">
-          <section class="module">
-            <div class="moduleHeader orange">Sierra's Blurbs</div>
-            <div class="moduleBody">
-              <h3>About me:</h3>
-              <p>
-                Hi, I’m <strong>Sierra</strong>. I build systems—digital, educational,
-                emotional, and physical.
-              </p>
-              <p>
-                This site is not a traditional portfolio. It’s a space that holds the work,
-                the thinking, and the things I’m building over time.
-              </p>
+.searchSelect,
+.searchBtn {
+  height: 28px;
+  border: 1px solid #7f7f7f;
+  background: #fff;
+}
 
-              <h3>What I'm building:</h3>
-              <p>
-                A mix of digital products, writing, real-world projects, and ideas that do
-                not fit neatly into one category.
-              </p>
-            </div>
-          </section>
+.searchBtn {
+  padding: 0 12px;
+  cursor: pointer;
+}
 
-          <section id="top8" class="module">
-            <div class="moduleHeader blue">Sierra's Top 8</div>
-            <div class="moduleBody">
-              <div class="top8Grid">
-                <a class="topFriend" href="https://gritandflowlabs.com" target="_blank" rel="noopener">
-                  <div class="topFriendPic">GF</div>
-                  <div class="topFriendName">Grit &amp; Flow Labs</div>
-                </a>
+.searchMessage {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #ffffff;
+}
 
-                <a class="topFriend" href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">
-                  <div class="topFriendPic">LH</div>
-                  <div class="topFriendName">Lee Holdings Group</div>
-                </a>
+.searchHighlight {
+  background: #fff3a3;
+  padding: 0 2px;
+}
 
-                <a class="topFriend" href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">
-                  <div class="topFriendPic">BK</div>
-                  <div class="topFriendName">My Book</div>
-                </a>
+.altTheme .searchMessage {
+  color: #FAF8F4;
+}
 
-                <a class="topFriend" href="Sierra Adams Resume.pdf">
-                  <div class="topFriendPic">RS</div>
-                  <div class="topFriendName">Resume</div>
-                </a>
+.navBar {
+  background: #6E8FBF;
+  padding: 8px 12px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 
-                <a class="topFriend" href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">
-                  <div class="topFriendPic">GH</div>
-                  <div class="topFriendName">GitHub</div>
-                </a>
+.tabLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
 
-                <a class="topFriend" href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">
-                  <div class="topFriendPic">IN</div>
-                  <div class="topFriendName">LinkedIn</div>
-                </a>
+.tabLink.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-                <div class="topFriend empty">
-                  <div class="topFriendPic">?</div>
-                  <div class="topFriendName">Coming Soon</div>
-                </div>
+/* Main layout */
+.profilePage {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 18px;
+  padding: 18px;
+  align-items: start;
+}
 
-                <div class="topFriend empty">
-                  <div class="topFriendPic">?</div>
-                  <div class="topFriendName">Coming Soon</div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </section>
+.leftColumn,
+.rightColumn {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
 
-        <section id="about" class="contentSection">
-          <section class="module">
-            <div class="moduleHeader orange">About Me</div>
-            <div class="moduleBody">
-              <p><strong>This isn’t an elevator pitch.</strong></p>
+/* Intro area */
+.profileIdentity h1 {
+  font-size: 46px;
+  margin: 0 0 14px;
+  line-height: 1;
+}
 
-              <p>
-                I teach.<br />
-                I build.<br />
-                I experiment.<br />
-                I’m interested in how systems affect people — especially when they’re overwhelmed.
-              </p>
+.profileTop {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 14px;
+  align-items: start;
+  margin-bottom:12px;
+}
 
-              <p>
-                If you’re looking for titles, they’re in the resume.<br />
-                If you’re looking for context, you’re already here.
-              </p>
-            </div>
-          </section>
-        </section>
+.profileImagePlaceholder {
+  width: 170px;
+  height: 190px;
+  border: 1px solid #7f7f7f;
+  background: #efefef;
+  display: grid;
+  place-items: center;
+  color: #666;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+}
 
-        <section id="stuff" class="contentSection">
-          <section class="module">
-            <div class="moduleHeader orange">Stuff I've Made</div>
-            <div class="moduleBody">
-              <h3>Grit &amp; Flow Labs</h3>
-              <p>
-                A small studio where I build apps, tools, and experiments that are meant to
-                feel good to use.
-              </p>
-              <p>
-                Ongoing. Always changing.
-              </p>
-              <p class="tinyNote">
-                (This link opens a more polished corner of the internet.)
-              </p>
-              <a class="textLink" href="https://gritandflowlabs.com" target="_blank" rel="noopener">
-                Visit Grit &amp; Flow Labs →
-              </a>
-            </div>
-          </section>
-        </section>
+.profileFacts p,
+.profileQuickStats p {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
 
-        <section id="irl" class="contentSection">
-          <section class="module">
-            <div class="moduleHeader orange">IRL Projects</div>
-            <div class="moduleBody">
-              <h3>Lee Holdings Group</h3>
-              <p>
-                Real-world projects focused on land, planning, and long-term development.
-              </p>
-              <p>
-                Slower timelines. Bigger consequences. Still intentional.
-              </p>
-              <p class="tinyNote">
-                (This one lives firmly offline, but the site tracks the thinking.)
-              </p>
-              <a class="textLink" href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">
-                Visit Lee Holdings Group →
-              </a>
-            </div>
-          </section>
-        </section>
 
-        <section id="writing" class="contentSection">
-          <section class="module">
-            <div class="moduleHeader orange">Writing</div>
-            <div class="moduleBody">
-              <p>
-                I write about work, systems, meetings, and the friction people are expected
-                to normalize.
-              </p>
-              <p>
-                My first book lives here now too, which still feels a little wild.
-              </p>
-              <a class="textLink" href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">
-                View the book →
-              </a>
-            </div>
-          </section>
-        </section>
-      </section>
-    </main>
+/* Modules */
+.module {
+  border: 2px solid #6699cc;
+  background: #fff;
+}
 
-    <footer class="siteFooter">
-      <span>© Sierra · under construction · occasionally online</span>
-    </footer>
-  </div>
+.moduleHeader {
+  padding: 6px 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
 
-  <audio id="bgMusic" loop>
-    <source src="Erykah Badu - Cleva.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
+.moduleHeader.blue {
+  background: #6E8FBF;
+  color: #ffffff;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.moduleHeader.orange {
+  background: #C9A24D;
+  color: #2B2B2B;
+}
+
+.moduleBody {
+  padding: 12px;
+  font-size: 15px;
+}
+
+.moduleBody h3 {
+  margin: 0 0 8px;
+  color: #cc6600;
+  font-size: 16px;
+}
+
+.moduleBody p {
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+/* Contact section */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+
+.contactGrid a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0b3b8c;
+  font-size: 14px;
+}
+
+/* URL box */
+.urlBox {
+  font-weight: normal;
+  font-size: 15px;
+  background: #f7fbff;
+  border: 1px solid #cddbee;
+}
+
+/* Interest table */
+.interestTable {
+  display: grid;
+  gap: 0;
+}
+
+.interestRow {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+.interestLabel {
+  background: #b8d0ee;
+  padding: 10px;
+  font-weight: bold;
+  border-top: 1px solid #fff;
+}
+
+.interestValue {
+  background: #dce9f8;
+  padding: 10px;
+  border-top: 1px solid #fff;
+}
+
+/* Buttons */
+.extrasRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.msButton {
+  border: 1px solid #1F3D2B;
+  background: #FAF8F4;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1F3D2B;
+}
+
+.msButton:hover {
+  background: #1F3D2B;
+  color: #ffffff;
+}
+
+/* Right column */
+
+
+.contentSection {
+  display: none;
+}
+
+.contentSection.active {
+  display: block;
+}
+
+.textLink {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0b3b8c;
+}
+
+.tinyNote {
+  color: #555;
+  font-size: 13px;
+}
+
+/* Top 8 */
+.top8Grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.topFriend {
+  text-decoration: none;
+  color: #0b3b8c;
+  text-align: center;
+}
+
+.topFriendPic {
+  height: 95px;
+  border: 1px solid #1F3D2B;
+  background: #FAF8F4;
+  display: grid;
+  place-items: center;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #1F3D2B;
+  font-size: 18px;
+}
+
+.topFriendName {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.topFriend.empty {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* Footer */
+.siteFooter {
+  background: #1F3D2B;
+  color: #FAF8F4;
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 13px;
+}
+
+/* Sparkles */
+.sparkle {
+  pointer-events: none;
+  z-index: 9999;
+}
+/* Cursor Trail */
+.cursorDot {
+  position: fixed;
+  font-size: 10px;
+  color: #C9A24D;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.8;
+}
+
+/* Theme Toggle*/
+.altTheme {
+  background: #e3e7e2; /* slightly darker soft background */
+}
+
+/* Page container */
+.altTheme .pageShell {
+  background: #f4f6f2;
+}
+
+/* Headers */
+.altTheme .topHeader {
+  background: #2B2B2B;
+}
+
+.altTheme .navBar {
+  background: #8aa2c8;
+}
+
+/* Module headers */
+.altTheme .moduleHeader.blue {
+  background: #2B2B2B;
+  color: #FAF8F4;
+}
+
+.altTheme .moduleHeader.orange {
+  background: #d4b26a;
+  color: #2B2B2B;
+}
+
+/* Text stays readable */
+.altTheme body,
+.altTheme p,
+.altTheme span,
+.altTheme div {
+  color: #2B2B2B;
+}
+
+.altTheme .brand {
+  color: #FAF8F4;
+}
+
+.altTheme .siteFooter {
+  background: #2B2B2B;
+  color: #FAF8F4;
+}
+
+/*ThoughtText*/
+
+#thoughtText {
+  display: inline-block;
+  margin: 10px 0 12px 12px;
+  padding: 8px 12px;
+  background: #f7fbff;
+  border: 1px solid #6699cc;
+  border-radius: 14px;
+  font-size: 13px;
+  color: #2B2B2B;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.08);
+  max-width: 260px;
+}
+
+#thoughtText:empty {
+  display: none;
+}
+
+.extrasRow {
+  margin-bottom: 6px;
+}
+
+/* Links */
+.altTheme a {
+  color: #1F3D2B;
+}
+
+/*Profile Pic*/
+
+.profilePic {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #6699cc;
+  overflow: hidden;
+  background: #eee;
+}
+
+.profilePic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profilePage {
+    grid-template-columns: 1fr;
+  }
+
+  .top8Grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profileIdentity h1 {
+    font-size: 34px;
+  }
+
+  .heroStatusInner {
+    font-size: 24px;
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand {
+    font-size: 28px;
+  }
+
+  .profileTop {
+    grid-template-columns: 1fr;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .interestRow {
+    grid-template-columns: 1fr;
+  }
+
+  .top8Grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .moduleBody {
+    font-size: 14px;
+  }
+}

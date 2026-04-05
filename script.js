@@ -81,3 +81,181 @@ if (music && musicBtn) {
     isPlaying = !isPlaying;
   });
 }
+
+const thoughts = [
+  "Lowkey plotting something",
+  "This could have been an email",
+  "Still building... just quieter",
+  "Systems > Chaos",
+  "This site changes when I feel like it",
+  "Somebody schedule the meeting and then cancel it",
+  "Currently resisting unnecessary complexity",
+  "Teaching by day, building by night",
+  "Not everything needs a committee",
+  "Quietly working on something good",
+  "Soft but focused",
+  "Yes, this is the portfolio",
+  "I probably have another idea already",
+  "Trying not to make another project before finishing the current one",
+  "This felt easier in my head",
+  "One thing about me... I will redesign it",
+  "Normal about systems. very normal.",
+  "Thinking about land again",
+  "DocReady is on my mind",
+  "Building first, explaining later",
+  "I support fewer meetings and better ideas",
+  "Still not doing things the boring way",
+  "If it feels clunky, I'm fixing it",
+  "Professional, but make it weird",
+  "Respectfully... this needed to look better"
+];
+
+document.getElementById("thoughtBtn")?.addEventListener("click", () => {
+  const t = thoughts[Math.floor(Math.random() * thoughts.length)];
+  document.getElementById("thoughtText").textContent = t;
+
+});
+
+document.getElementById("themeToggle")?.addEventListener("click", () => {
+  document.body.classList.toggle("altTheme");
+});
+
+const trailBtn = document.getElementById("trailToggle");
+let trailOn = false;
+
+document.addEventListener("mousemove", (e) => {
+  if (!trailOn) return;
+
+  const dot = document.createElement("div");
+  dot.textContent = "•";
+  dot.classList.add("cursorDot");
+
+  dot.style.left = e.clientX + "px";
+  dot.style.top = e.clientY + "px";
+
+  document.body.appendChild(dot);
+
+  setTimeout(() => dot.remove(), 400);
+});
+
+trailBtn?.addEventListener("click", () => {
+  trailOn = !trailOn;
+  trailBtn.textContent = trailOn
+    ? "🖱 Cursor Trail: ON"
+    : "🖱 Cursor Trail: OFF";
+});
+
+const searchInput = document.getElementById("siteSearch");
+const searchBtn = document.getElementById("searchBtn");
+const searchScope = document.getElementById("searchScope");
+const searchMessage = document.getElementById("searchMessage");
+
+function clearHighlights() {
+  document.querySelectorAll(".searchHighlight").forEach((mark) => {
+    const parent = mark.parentNode;
+    parent.replaceChild(document.createTextNode(mark.textContent), mark);
+    parent.normalize();
+  });
+}
+
+function activateTab(targetId) {
+  tabLinks.forEach((item) => item.classList.remove("active"));
+  contentSections.forEach((section) => section.classList.remove("active"));
+
+  const matchingTab = document.querySelector(`.tabLink[data-target="${targetId}"]`);
+  const matchingSection = document.getElementById(targetId);
+
+  if (matchingTab) matchingTab.classList.add("active");
+  if (matchingSection) matchingSection.classList.add("active");
+}
+
+function highlightFirstMatch(container, query) {
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      if (
+        node.parentElement &&
+        ["SCRIPT", "STYLE"].includes(node.parentElement.tagName)
+      ) {
+        return NodeFilter.FILTER_REJECT;
+      }
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+
+  const lowerQuery = query.toLowerCase();
+  let node;
+
+  while ((node = walker.nextNode())) {
+    const text = node.nodeValue;
+    const lowerText = text.toLowerCase();
+    const index = lowerText.indexOf(lowerQuery);
+
+    if (index !== -1) {
+      const before = text.slice(0, index);
+      const match = text.slice(index, index + query.length);
+      const after = text.slice(index + query.length);
+
+      const span = document.createElement("span");
+      span.className = "searchHighlight";
+      span.textContent = match;
+
+      const fragment = document.createDocumentFragment();
+      if (before) fragment.appendChild(document.createTextNode(before));
+      fragment.appendChild(span);
+      if (after) fragment.appendChild(document.createTextNode(after));
+
+      node.parentNode.replaceChild(fragment, node);
+      return span;
+    }
+  }
+
+  return null;
+}
+
+function runSearch() {
+  const query = searchInput.value.trim();
+  const scope = searchScope.value;
+
+  clearHighlights();
+  searchMessage.textContent = "";
+
+  if (!query) {
+    searchMessage.textContent = "Type something to search.";
+    return;
+  }
+
+  let sectionsToSearch = [];
+
+  if (scope === "all") {
+    sectionsToSearch = Array.from(contentSections);
+  } else {
+    const section = document.getElementById(scope);
+    if (section) sectionsToSearch = [section];
+  }
+
+  for (const section of sectionsToSearch) {
+    const text = section.textContent.toLowerCase();
+    if (text.includes(query.toLowerCase())) {
+      activateTab(section.id);
+
+      const matchEl = highlightFirstMatch(section, query);
+      if (matchEl) {
+        matchEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      searchMessage.textContent = `Found "${query}" in ${section.id}.`;
+      return;
+    }
+  }
+
+  searchMessage.textContent = `No results found for "${query}".`;
+}
+
+searchBtn?.addEventListener("click", runSearch);
+
+searchInput?.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    runSearch();
+  }
+});

@@ -16,23 +16,27 @@
       <div class="topHeaderInner">
         <div class="brandRow">
           <div class="brand">sierra-space</div>
-          <div class="topRightLinks">
-            <a href="#about">About</a>
-            <a href="#writing">Writing</a>
-            <a href="#top8">Top 8</a>
-          </div>
         </div>
 
         <div class="searchRow">
-          <input class="searchInput" type="text" placeholder="Search my space..." />
-          <select class="searchSelect">
-            <option>MySpace</option>
-            <option>Projects</option>
-            <option>Writing</option>
+          <input
+            class="searchInput"
+            id="siteSearch"
+            type="text"
+            placeholder="Search sierra space..."
+          />
+          <select class="searchSelect" id="searchScope">
+            <option value="all">MySpace</option>
+            <option value="home">Home</option>
+            <option value="about">About</option>
+            <option value="stuff">Stuff I've Made</option>
+            <option value="irl">IRL Projects</option>
+            <option value="writing">Writing</option>
           </select>
-          <button class="searchBtn" type="button">Search</button>
+          <button class="searchBtn" id="searchBtn" type="button">Search</button>
         </div>
-      </div>
+
+        <p id="searchMessage" class="searchMessage"></p>
 
       <nav class="navBar">
         <a href="#" class="tabLink active" data-target="home">Home</a>
@@ -49,13 +53,13 @@
           <h1>Sierra Adams</h1>
 
           <div class="profileTop">
-            <div class="profileImagePlaceholder">
-              <span>photo coming soon</span>
+            <div class="profilePic">
+              <img src="images/sierra-space-portfolio.png" alt="Sierra Adams" />
             </div>
 
             <div class="profileFacts">
-              <p>"soft but focused"</p>
-              <p>Educator, Builder</p>
+              <p>"✦ focused, building quietly & teaching ✦"</p>
+              <p>Educator & Builder</p>
               <p>Atlanta, Georgia</p>
               <p>United States</p>
             </div>
@@ -64,16 +68,10 @@
           <div class="profileQuickStats">
             <p><strong>Mood:</strong> <span id="mood">curious</span></p>
             <p><strong>Visitor #:</strong> <span id="visitCount">000001</span></p>
-            <p><strong>Status:</strong> building quietly</p>
           </div>
 
-          <div class="viewLinks">
-            View My:
-            <a href="Sierra Adams Resume.pdf">Resume</a> |
-            <a href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">GitHub</a> |
-            <a href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
+          
+        
 
         <section class="module">
           <div class="moduleHeader blue">Contacting Sierra</div>
@@ -81,18 +79,11 @@
             <a href="Sierra Adams Resume.pdf">📄 Resume</a>
             <a href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">💾 GitHub</a>
             <a href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-            <a href="https://gritandflowlabs.com" target="_blank" rel="noopener">✨ Grit &amp; Flow Labs</a>
-            <a href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">🌱 Lee Holdings Group</a>
             <a href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">📖 My Book</a>
           </div>
         </section>
 
-        <section class="module">
-          <div class="moduleHeader blue">Sierra Space URL</div>
-          <div class="moduleBody urlBox">
-            https://sierra-space.netlify.app
-          </div>
-        </section>
+        
 
         <section class="module">
           <div class="moduleHeader blue">Sierra's Interests</div>
@@ -100,58 +91,54 @@
             <div class="interestRow">
               <div class="interestLabel">General</div>
               <div class="interestValue">
-                Mental Health, Education, Building Things, Land, Writing, Design, Systems
+                Mental health, education, systems, and long-term thinking
               </div>
             </div>
             <div class="interestRow">
               <div class="interestLabel">Currently</div>
               <div class="interestValue">
-                Teaching, building products, writing, and working on long-term development projects
+                Teaching, building DocReady, and launching my startup
               </div>
             </div>
-            <div class="interestRow">
-              <div class="interestLabel">Music</div>
-              <div class="interestValue">
-                Erykah Badu — Cleva
-              </div>
-            </div>
+            
           </div>
         </section>
 
         <section class="module">
-          <div class="moduleHeader blue">Site Extras</div>
+          <div class="moduleHeader blue">Razzle Dazzle</div>
           <div class="moduleBody extrasRow">
             <button class="msButton" id="musicToggle" type="button">🎵 Music: OFF</button>
             <button class="msButton" id="sparkleBtn" type="button">✨ Add Sparkles</button>
+            <button class="msButton" id="thoughtBtn">💬 Random Thought</button>
+            <button class="msButton" id="themeToggle">🌗 Theme</button>
+            <button class="msButton" id="trailToggle">🖱 Cursor Trail: OFF</button>
           </div>
+
+          <p id="thoughtText" class="tinyNote"></p>
+
         </section>
       </section>
 
       <section class="rightColumn">
-        <section class="heroStatus">
-          <div class="heroStatusInner">
-            Sierra is building quietly ✦ teaching ✦ experimenting with land
-          </div>
-        </section>
+        
 
         <section id="home" class="contentSection active">
           <section class="module">
-            <div class="moduleHeader orange">Sierra's Blurbs</div>
+            <div class="moduleHeader orange">Intro</div>
             <div class="moduleBody">
-              <h3>About me:</h3>
+      
               <p>
-                Hi, I’m <strong>Sierra</strong>. I build systems—digital, educational,
-                emotional, and physical.
-              </p>
-              <p>
-                This site is not a traditional portfolio. It’s a space that holds the work,
-                the thinking, and the things I’m building over time.
+              Hi, <strong>I’m Sierra</strong>. I build systems — digital, educational, emotional, and physical.
               </p>
 
-              <h3>What I'm building:</h3>
               <p>
-                A mix of digital products, writing, real-world projects, and ideas that do
-                not fit neatly into one category.
+              This isn’t a traditional portfolio. It’s a space that reflects how I think,
+              what I’m building, and how I approach problems.
+              </p>
+
+              <p>
+              Some things are polished. Some are still in progress.
+              Both matter.
               </p>
             </div>
           </section>
@@ -160,46 +147,46 @@
             <div class="moduleHeader blue">Sierra's Top 8</div>
             <div class="moduleBody">
               <div class="top8Grid">
-                <a class="topFriend" href="https://gritandflowlabs.com" target="_blank" rel="noopener">
-                  <div class="topFriendPic">GF</div>
-                  <div class="topFriendName">Grit &amp; Flow Labs</div>
-                </a>
-
-                <a class="topFriend" href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">
-                  <div class="topFriendPic">LH</div>
-                  <div class="topFriendName">Lee Holdings Group</div>
-                </a>
-
-                <a class="topFriend" href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">
-                  <div class="topFriendPic">BK</div>
-                  <div class="topFriendName">My Book</div>
-                </a>
-
-                <a class="topFriend" href="Sierra Adams Resume.pdf">
-                  <div class="topFriendPic">RS</div>
-                  <div class="topFriendName">Resume</div>
-                </a>
-
-                <a class="topFriend" href="https://github.com/SierraAdamsDev" target="_blank" rel="noopener">
-                  <div class="topFriendPic">GH</div>
-                  <div class="topFriendName">GitHub</div>
-                </a>
-
-                <a class="topFriend" href="https://www.linkedin.com/in/sierra-adams/" target="_blank" rel="noopener">
-                  <div class="topFriendPic">IN</div>
-                  <div class="topFriendName">LinkedIn</div>
-                </a>
-
-                <div class="topFriend empty">
-                  <div class="topFriendPic">?</div>
-                  <div class="topFriendName">Coming Soon</div>
+                <div class="topFriend">
+                  <div class="topFriendPic">💻</div>
+                  <div class="topFriendName">Software Dev</div>
                 </div>
 
-                <div class="topFriend empty">
-                  <div class="topFriendPic">?</div>
-                  <div class="topFriendName">Coming Soon</div>
-                </div>
+              <div class="topFriend">
+                <div class="topFriendPic">🎨</div>
+                <div class="topFriendName">UX / Design</div>
               </div>
+
+              <div class="topFriend">
+                <div class="topFriendPic">📊</div>
+                <div class="topFriendName">Project Mgmt</div>
+              </div>
+
+              <div class="topFriend">
+                <div class="topFriendPic">🧠</div>
+                <div class="topFriendName">Psych + Systems</div>
+              </div>
+
+              <div class="topFriend">
+                <div class="topFriendPic">🍎</div>
+                <div class="topFriendName">Teaching</div>
+              </div>
+
+              <div class="topFriend">
+                <div class="topFriendPic">📱</div>
+                <div class="topFriendName">App Dev</div>
+              </div>
+
+              <div class="topFriend">
+                <div class="topFriendPic">✍🏽</div>
+                <div class="topFriendName">Writing</div>
+              </div>
+
+              <div class="topFriend">
+                <div class="topFriendPic">🧩</div>
+                <div class="topFriendName">Systems Thinking</div>
+              </div>
+            </div>
             </div>
           </section>
         </section>
