@@ -18,9 +18,9 @@ a:hover {
 }
 
 .pageShell {
-  max-width: 1035px;
+  width: min(1400px, calc(100% - 48px));
   margin: 0 auto;
-  background: #faf8f4;
+  background: #ffffff;
   min-height: 100vh;
   border-left: 1px solid #7a7a7a;
   border-right: 1px solid #7a7a7a;
@@ -127,10 +127,11 @@ a:hover {
 /* Main layout */
 .profilePage {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: 330px minmax(0, 860px);
   gap: 18px;
-  padding: 18px;
+  padding: 14px;
   align-items: start;
+  justify-content: start;
 }
 
 .leftColumn,
@@ -281,7 +282,10 @@ a:hover {
 }
 
 /* Right column */
-
+.rightColumn {
+  width: 100%;
+  max-width: 860px;
+}
 
 .contentSection {
   display: none;
@@ -306,7 +310,7 @@ a:hover {
 .top8Grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 10px;
 }
 
 .topFriend {
@@ -316,15 +320,22 @@ a:hover {
 }
 
 .topFriendPic {
-  height: 95px;
-  border: 1px solid #1F3D2B;
-  background: #FAF8F4;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #888;
+  background: #efefef;
   display: grid;
   place-items: center;
   margin-bottom: 6px;
   font-weight: bold;
-  color: #1F3D2B;
-  font-size: 18px;
+  color: #555;
+  font-size: 42px;
+  opacity:0.9;
+}
+
+.topFriendPic:hover {
+  background: #e6e6e6;
+  transform: scale(1.03);
+  cursor: default;
 }
 
 .topFriendName {
@@ -392,10 +403,7 @@ a:hover {
 }
 
 /* Text stays readable */
-.altTheme body,
-.altTheme p,
-.altTheme span,
-.altTheme div {
+.altTheme {
   color: #2B2B2B;
 }
 
@@ -495,5 +503,26 @@ a:hover {
 
   .moduleBody {
     font-size: 14px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pageShell {
+    width: min(1240px, calc(100% - 40px));
+  }
+
+  .profilePage {
+    grid-template-columns: 330px minmax(0, 860px);
+    gap: 18px;
+    justify-content: start;
+  }
+
+  .moduleBody {
+    padding: 12px;
+  }
+}
+@media (min-width: 1280px) {
+  body {
+    background: #d6d6d6;
   }
 }
