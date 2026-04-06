@@ -1,127 +1,37 @@
-# sierra-space
+# Sierra Space ✨
 
-A non-traditional personal site built in a 90s/Y2K-inspired style.
+A MySpace-inspired personal site designed to bring personality back to the web.
 
-This project serves as a creative portfolio — not a conventional résumé site — and reflects an intentional approach to design, systems thinking, and personal authorship.
+This is not a traditional portfolio.
 
-Live site: https://sierra-space.netlify.app
-
----
-
-## Overview
-
-sierra-space is a lightweight, static site built using HTML, CSS, and vanilla JavaScript.
-
-It blends:
-- Human-centered design principles
-- Subtle interactive elements
-- Intentional restraint
-- A nostalgic visual layer
-
-The goal was to create something expressive without being performative, and structured without being rigid.
-
----
+Instead of polished case studies and predictable layouts, this site reflects how I actually think, build, and experiment in real time.
 
 ## Features
 
-- Tab-based navigation (no page reloads)
-- Local storage visitor counter
-- Dynamic “mood” display
-- Toggleable background music
-- Interactive sparkle animation
-- Responsive layout for mobile and desktop
+- MySpace-style layout with modern responsiveness
+- “Top 8” reimagined as core skills
+- Theme toggle (because one version wasn’t enough)
+- Random thought generator
+- Interactive UI elements (hover states, effects)
+- Fully custom — no templates used
 
----
+## Purpose
 
-## Tech Stack
+To explore what happens when you prioritize personality over perfection in web design.
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Netlify (deployment)
-- Git & GitHub (version control)
-
----
-
-## Structure
-# sierra-space
-
-A non-traditional personal site built in a 90s/Y2K-inspired style.
-
-This project serves as a creative portfolio — not a conventional résumé site — and reflects an intentional approach to design, systems thinking, and personal authorship.
-
-Live site: https://sierra-space.netlify.app
-
----
-
-## Overview
-
-sierra-space is a lightweight, static site built using HTML, CSS, and vanilla JavaScript.
-
-It blends:
-- Human-centered design principles
-- Subtle interactive elements
-- Intentional restraint
-- A nostalgic visual layer
-
-The goal was to create something expressive without being performative, and structured without being rigid.
-
----
-
-## Features
-
-- Tab-based navigation (no page reloads)
-- Local storage visitor counter
-- Dynamic “mood” display
-- Toggleable background music
-- Interactive sparkle animation
-- Responsive layout for mobile and desktop
-
----
+## Live Site
+https://sierra-space.netlify.app/
 
 ## Tech Stack
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
+- HTML
+- CSS
+- JavaScript
 - Netlify (deployment)
-- Git & GitHub (version control)
 
----
+## Notes
 
-## Structure
-/
-├── index.html
-├── styles.css
-├── script.js
-├── Erykah Badu - Cleva.mp3
-├── Sierra Adams Resume.pdf
-└── README.md
-
-
----
-
-## Design Philosophy
-
-This site was intentionally built without frameworks or libraries.
-
-The focus was on:
-- Clarity over complexity
-- Control over abstraction
-- Expression without over-engineering
-
-It functions as a space rather than a product.
-
----
-
-## Future Iterations
-
-Potential additions may include:
-- Expanded writing section
-- Additional interactive elements
-- Refined visual treatments
-
-The site remains intentionally lightweight and adaptable.
+Built intentionally to challenge modern portfolio expectations.
 
 ---
 
