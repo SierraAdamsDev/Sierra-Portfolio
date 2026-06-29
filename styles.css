@@ -47,6 +47,11 @@ a:hover {
   font-size: 34px;
   font-weight: bold;
   letter-spacing: -0.5px;
+  color: #FAF8F4;
+  text-shadow:
+    1px 1px 0 #C9A24D,
+    2px 2px 0 #2B2B2B,
+    3px 3px 0 rgba(0, 0, 0, 0.35);
 }
 
 .topRightLinks {
@@ -153,7 +158,7 @@ a:hover {
   grid-template-columns: 170px 1fr;
   gap: 14px;
   align-items: start;
-  margin-bottom:12px;
+  margin-bottom: 12px;
 }
 
 .profileImagePlaceholder {
@@ -174,7 +179,6 @@ a:hover {
   margin: 0 0 8px;
   font-size: 14px;
 }
-
 
 /* Modules */
 .module {
@@ -265,6 +269,7 @@ a:hover {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 6px;
 }
 
 .msButton {
@@ -317,6 +322,8 @@ a:hover {
   text-decoration: none;
   color: #0b3b8c;
   text-align: center;
+  display: block;
+  padding: 4px;
 }
 
 .topFriendPic {
@@ -329,13 +336,7 @@ a:hover {
   font-weight: bold;
   color: #555;
   font-size: 42px;
-  opacity:0.9;
-}
-
-.topFriendPic:hover {
-  background: #e6e6e6;
-  transform: scale(1.03);
-  cursor: default;
+  opacity: 0.9;
 }
 
 .topFriendName {
@@ -362,6 +363,7 @@ a:hover {
   pointer-events: none;
   z-index: 9999;
 }
+
 /* Cursor Trail */
 .cursorDot {
   position: fixed;
@@ -372,9 +374,10 @@ a:hover {
   opacity: 0.8;
 }
 
-/* Theme Toggle*/
+/* Theme Toggle */
 .altTheme {
-  background: #e3e7e2; /* slightly darker soft background */
+  background: #e3e7e2;
+  color: #2B2B2B;
 }
 
 /* Page container */
@@ -402,22 +405,25 @@ a:hover {
   color: #2B2B2B;
 }
 
-/* Text stays readable */
-.altTheme {
-  color: #2B2B2B;
-}
-
 .altTheme .brand {
   color: #FAF8F4;
 }
 
 .altTheme .siteFooter {
   background: #2B2B2B;
+}
+
+.altTheme .siteFooter,
+.altTheme .siteFooter * {
   color: #FAF8F4;
 }
 
-/*ThoughtText*/
+/* Links */
+.altTheme a {
+  color: #1F3D2B;
+}
 
+/* ThoughtText */
 #thoughtText {
   display: inline-block;
   margin: 10px 0 12px 12px;
@@ -435,17 +441,7 @@ a:hover {
   display: none;
 }
 
-.extrasRow {
-  margin-bottom: 6px;
-}
-
-/* Links */
-.altTheme a {
-  color: #1F3D2B;
-}
-
-/*Profile Pic*/
-
+/* Profile Pic */
 .profilePic {
   width: 150px;
   height: 150px;
@@ -457,7 +453,104 @@ a:hover {
 .profilePic img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
+}
+
+/* 3D hover accents */
+@media (hover: hover) and (pointer: fine) {
+  .module,
+  .profilePic,
+  .topFriendPic {
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease,
+      border-color 120ms ease,
+      background 120ms ease;
+    transform-style: preserve-3d;
+  }
+
+  .module:hover {
+    transform: perspective(900px) rotateX(1deg) rotateY(-1deg) translateY(-2px);
+    box-shadow: 8px 8px 0 rgba(31, 61, 43, 0.18);
+  }
+
+  .profilePic:hover {
+    transform: perspective(800px) rotateY(5deg) rotateX(2deg) translateY(-2px);
+    box-shadow: 6px 6px 0 rgba(31, 61, 43, 0.22);
+  }
+
+  .topFriend:hover .topFriendPic {
+    background: #e6e6e6;
+    transform: perspective(700px) translateZ(18px) scale(1.04);
+    box-shadow: 5px 5px 0 rgba(31, 61, 43, 0.18);
+    cursor: default;
+  }
+}
+
+/* Bookshelf */
+
+.bookshelf {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px 0 16px;
+}
+
+.book {
+  width: 110px;
+  text-align: center;
+}
+
+.bookCover {
+  font-size: 52px;
+  margin-bottom: 8px;
+  transition: transform 150ms ease;
+}
+
+.book:hover .bookCover {
+  transform: translateY(-4px) rotate(-3deg);
+}
+
+.bookTitle {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.bookStatus {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Dev Diary */
+
+.devDiaryFeed {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.diaryEntry {
+  border: 1px solid #cddbee;
+  background: #f7fbff;
+  padding: 10px;
+}
+
+.diaryEntryTitle {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.diaryEntryMeta {
+  font-size: 12px;
+  color: #666;
+}
+
+.diaryEntry a {
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* Responsive */
@@ -507,6 +600,10 @@ a:hover {
 }
 
 @media (min-width: 1280px) {
+  body {
+    background: #d6d6d6;
+  }
+
   .pageShell {
     width: min(1240px, calc(100% - 40px));
   }
@@ -519,10 +616,5 @@ a:hover {
 
   .moduleBody {
     padding: 12px;
-  }
-}
-@media (min-width: 1280px) {
-  body {
-    background: #d6d6d6;
   }
 }

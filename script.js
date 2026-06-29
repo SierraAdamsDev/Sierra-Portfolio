@@ -259,3 +259,72 @@ searchInput?.addEventListener("keydown", (event) => {
     runSearch();
   }
 });
+
+/* Dev Diary GitHub Feed */
+const devDiaryFeed = document.getElementById("devDiaryFeed");
+
+async function loadDevDiary() {
+  if (!devDiaryFeed) return;
+
+  try {
+    const response = await fetch("https://api.github.com/users/SierraAdamsDev/events/public");
+
+    if (!response.ok) {
+      throw new Error("GitHub activity could not be loaded.");
+    }
+
+    const events = await response.json();
+
+    const usefulEvents = events
+      .filter((event) => event.type === "PushEvent" || event.type === "CreateEvent")
+      .slice(0, 4);
+
+    if (!usefulEvents.length) {
+      devDiaryFeed.innerHTML = `
+        <p class="tinyNote">No recent public GitHub activity found.</p>
+      `;
+      return;
+    }
+
+    devDiaryFeed.innerHTML = usefulEvents
+      .map((event) => {
+        const repoName = event.repo.name.replace("SierraAdamsDev/", "");
+        const eventDate = new Date(event.created_at).toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric"
+        });
+
+        let title = "Updated a project";
+        let detail = repoName;
+
+        if (event.type === "PushEvent") {
+          const commit = event.payload.commits?.[0];
+          title = commit?.message || "Pushed new code";
+          detail = `Pushed to ${repoName}`;
+        }
+
+        if (event.type === "CreateEvent") {
+          title = `Created ${event.payload.ref_type}`;
+          detail = repoName;
+        }
+
+        return `
+          <div class="diaryEntry">
+            <div class="diaryEntryTitle">${title}</div>
+            <div class="diaryEntryMeta">${detail} · ${eventDate}</div>
+            <a href="https://github.com/${event.repo.name}" target="_blank" rel="noopener">
+              Open repo →
+            </a>
+          </div>
+        `;
+      })
+      .join("");
+  } catch (error) {
+    devDiaryFeed.innerHTML = `
+      <p class="tinyNote">GitHub activity is taking a break right now.</p>
+    `;
+  }
+}
+
+loadDevDiary();

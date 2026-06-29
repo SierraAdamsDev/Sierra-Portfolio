@@ -9,13 +9,15 @@
     content="A MySpace-inspired non-traditional personal portfolio for Sierra Adams."
   />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
+
 <body>
   <div class="pageShell">
     <header class="topHeader">
       <div class="topHeaderInner">
         <div class="brandRow">
-          <div class="brand">sierra-space</div>
+          <div class="brand">SierraSpace</div>
         </div>
 
         <div class="searchRow">
@@ -25,25 +27,30 @@
             type="text"
             placeholder="Search sierra space..."
           />
+
           <select class="searchSelect" id="searchScope">
             <option value="all">MySpace</option>
             <option value="home">Home</option>
             <option value="about">About</option>
-            <option value="stuff">Stuff I've Made</option>
-            <option value="irl">IRL Projects</option>
-            <option value="writing">Writing</option>
+            <option value="stuff">The Lab</option>
+            <option value="irl">Beyond the Screen</option>
+            <option value="writing">Author's Shelf</option>
+  
           </select>
+
           <button class="searchBtn" id="searchBtn" type="button">Search</button>
         </div>
 
         <p id="searchMessage" class="searchMessage"></p>
+      </div>
 
       <nav class="navBar">
         <a href="#" class="tabLink active" data-target="home">Home</a>
         <a href="#" class="tabLink" data-target="about">About</a>
-        <a href="#" class="tabLink" data-target="stuff">Stuff I've Made</a>
-        <a href="#" class="tabLink" data-target="irl">IRL Projects</a>
-        <a href="#" class="tabLink" data-target="writing">Writing</a>
+        <a href="#" class="tabLink" data-target="stuff">The Lab</a>
+        <a href="#" class="tabLink" data-target="irl">Beyond the Screen</a>
+        <a href="#" class="tabLink" data-target="writing">Author's Shelf</a>
+  
       </nav>
     </header>
 
@@ -58,8 +65,8 @@
             </div>
 
             <div class="profileFacts">
-              <p>"✦ focused, building quietly & teaching ✦"</p>
-              <p>Educator & Creator</p>
+              <p>"✦ recovering perfectionist ✦"</p>
+              <p>Creator</p>
               <p>Atlanta, Georgia</p>
               <p>United States</p>
             </div>
@@ -69,9 +76,7 @@
             <p><strong>Mood:</strong> <span id="mood">curious</span></p>
             <p><strong>Visitor #:</strong> <span id="visitCount">000001</span></p>
           </div>
-
-          
-        
+        </div>
 
         <section class="module">
           <div class="moduleHeader blue">Contacting Sierra</div>
@@ -83,24 +88,64 @@
           </div>
         </section>
 
-        
-
         <section class="module">
           <div class="moduleHeader blue">Sierra's Interests</div>
           <div class="moduleBody interestTable">
             <div class="interestRow">
-              <div class="interestLabel">General</div>
+              <div class="interestLabel">Mission</div>
               <div class="interestValue">
-                Mental health, education, systems, and long-term thinking
+                Build useful systems that make real life easier, clearer, and more human.
               </div>
             </div>
+
             <div class="interestRow">
               <div class="interestLabel">Currently</div>
               <div class="interestValue">
-                Teaching, building DocReady, and launching my startup
+                Teaching engineering, growing AlignPlay, supporting DocReady and VetReady, and writing what comes next.
               </div>
             </div>
-            
+
+            <div class="interestRow">
+              <div class="interestLabel">Learning</div>
+              <div class="interestValue">
+                Three.js, deeper UI motion, and better ways to make the web feel alive again.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="module">
+          <div class="moduleHeader blue">Creator Stats</div>
+          <div class="moduleBody interestTable">
+            <div class="interestRow">
+              <div class="interestLabel">Apps</div>
+              <div class="interestValue">2 Live</div>
+            </div>
+
+            <div class="interestRow">
+              <div class="interestLabel">Websites</div>
+              <div class="interestValue">6 Live</div>
+            </div>
+
+            <div class="interestRow">
+              <div class="interestLabel">Book</div>
+              <div class="interestValue">1 Published</div>
+            </div>
+
+            <div class="interestRow">
+              <div class="interestLabel">Startup</div>
+              <div class="interestValue">1 Building</div>
+            </div>
+
+            <div class="interestRow">
+              <div class="interestLabel">Teaching</div>
+              <div class="interestValue">Engineering</div>
+            </div>
+
+            <div class="interestRow">
+              <div class="interestLabel">Focus</div>
+              <div class="interestValue">Three.js</div>
+            </div>
           </div>
         </section>
 
@@ -109,36 +154,33 @@
           <div class="moduleBody extrasRow">
             <button class="msButton" id="musicToggle" type="button">🎵 Music: OFF</button>
             <button class="msButton" id="sparkleBtn" type="button">✨ Add Sparkles</button>
-            <button class="msButton" id="thoughtBtn">💬 Random Thought</button>
-            <button class="msButton" id="themeToggle">🌗 Theme</button>
-            <button class="msButton" id="trailToggle">🖱 Cursor Trail: OFF</button>
+            <button class="msButton" id="thoughtBtn" type="button">💬 Random Thought</button>
+            <button class="msButton" id="themeToggle" type="button">🌗 Theme</button>
+            <button class="msButton" id="trailToggle" type="button">🖱 Cursor Trail: OFF</button>
           </div>
 
           <p id="thoughtText" class="tinyNote"></p>
-
         </section>
       </section>
 
       <section class="rightColumn">
-        
-
         <section id="home" class="contentSection active">
           <section class="module">
             <div class="moduleHeader orange">Intro</div>
             <div class="moduleBody">
-      
               <p>
-              Hi, <strong>I’m Sierra</strong>. I build systems — digital, educational, emotional, and physical.
+                Hi, <strong>I’m Sierra</strong>. I build systems — digital, educational,
+                emotional, and physical.
               </p>
 
               <p>
-              This isn’t a traditional portfolio. It’s a space that reflects how I think,
-              what I’m building, and how I approach problems.
+                This isn’t a traditional portfolio. It’s a space that reflects how I think,
+                what I’m building, and how I approach problems.
               </p>
 
               <p>
-              Some things are polished. Some are still in progress.
-              Both matter.
+                Some things are polished. Some are still in progress.
+                Both matter.
               </p>
             </div>
           </section>
@@ -152,61 +194,128 @@
                   <div class="topFriendName">Software Dev</div>
                 </div>
 
-              <div class="topFriend">
-                <div class="topFriendPic">🎨</div>
-                <div class="topFriendName">UX / Design</div>
-              </div>
+                <div class="topFriend">
+                  <div class="topFriendPic">🎨</div>
+                  <div class="topFriendName">UX / Design</div>
+                </div>
 
-              <div class="topFriend">
-                <div class="topFriendPic">📊</div>
-                <div class="topFriendName">Project Mgmt</div>
-              </div>
+                <div class="topFriend">
+                  <div class="topFriendPic">📊</div>
+                  <div class="topFriendName">Project Mgmt</div>
+                </div>
 
-              <div class="topFriend">
-                <div class="topFriendPic">🧠</div>
-                <div class="topFriendName">Psych + Systems</div>
-              </div>
+                <div class="topFriend">
+                  <div class="topFriendPic">🧠</div>
+                  <div class="topFriendName">Psych + Systems</div>
+                </div>
 
-              <div class="topFriend">
-                <div class="topFriendPic">🍎</div>
-                <div class="topFriendName">Teaching</div>
-              </div>
+                <div class="topFriend">
+                  <div class="topFriendPic">🍎</div>
+                  <div class="topFriendName">Teaching</div>
+                </div>
 
-              <div class="topFriend">
-                <div class="topFriendPic">📱</div>
-                <div class="topFriendName">App Dev</div>
-              </div>
+                <div class="topFriend">
+                  <div class="topFriendPic">📱</div>
+                  <div class="topFriendName">App Dev</div>
+                </div>
 
-              <div class="topFriend">
-                <div class="topFriendPic">✍🏽</div>
-                <div class="topFriendName">Writing</div>
-              </div>
+                <div class="topFriend">
+                  <div class="topFriendPic">✍🏽</div>
+                  <div class="topFriendName">Writing</div>
+                </div>
 
-              <div class="topFriend">
-                <div class="topFriendPic">🧩</div>
-                <div class="topFriendName">Systems Thinking</div>
+                <div class="topFriend">
+                  <div class="topFriendPic">🧩</div>
+                  <div class="topFriendName">Systems Thinking</div>
+                </div>
               </div>
             </div>
+          </section>
+          <section class="module">
+            <div class="moduleHeader orange">Dev Diary</div>
+            <div class="moduleBody">
+              <p class="tinyNote">
+                Latest public GitHub activity from Sierra.
+              </p>
+
+              <div id="devDiaryFeed" class="devDiaryFeed">
+                <p class="tinyNote">Loading GitHub activity...</p>
+              </div>
+
+              <p>
+                <a
+                  class="textLink"
+                  href="https://github.com/SierraAdamsDev"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View GitHub →
+                </a>
+              </p>
             </div>
           </section>
         </section>
 
         <section id="about" class="contentSection">
           <section class="module">
-            <div class="moduleHeader orange">About Me</div>
-            <div class="moduleBody">
-              <p><strong>This isn’t an elevator pitch.</strong></p>
+            <div class="moduleHeader orange">About Sierra</div>
 
+            <div class="moduleBody">
               <p>
-                I teach.<br />
-                I build.<br />
-                I experiment.<br />
-                I’m interested in how systems affect people — especially when they’re overwhelmed.
+                I don't think of myself as someone who has one career.
               </p>
 
               <p>
-                If you’re looking for titles, they’re in the resume.<br />
-                If you’re looking for context, you’re already here.
+                I'm a creator.
+              </p>
+
+              <p>
+                Sometimes that means building software. Sometimes it means writing a
+                book, designing a website, teaching engineering, or sketching out an
+                idea that won't exist for another five years.
+              </p>
+
+              <p>
+                What ties it all together is that I enjoy solving problems and creating
+                things that make someone's life a little easier.
+              </p>
+
+              <p>
+                I care about thoughtful design, systems that make sense, and technology
+                that feels approachable instead of overwhelming.
+              </p>
+
+              <p>
+                Whether I'm building an app, planning a lesson, or launching a new
+                project, I'm usually asking the same question:
+              </p>
+
+              <p>
+                <strong>"How can this work better for the people using it?"</strong>
+              </p>
+
+              <p>
+                Outside of work, I'm usually learning something new. Lately that's been
+                Three.js, but there's almost always another framework, idea, or rabbit
+                hole waiting after that.
+              </p>
+
+              <p>
+                I also have an unhealthy habit of buying domain names because every
+                interesting idea somehow deserves its own website.
+              </p>
+
+              <p>
+                Sierra Space isn't meant to be a polished corporate portfolio.
+              </p>
+
+              <p>
+                It's a snapshot of what I'm building, what I'm learning, and where my
+                curiosity happens to be taking me.
+              </p>
+
+              <p>
+                Thanks for stopping by.
               </p>
             </div>
           </section>
@@ -214,11 +323,32 @@
 
         <section id="stuff" class="contentSection">
           <section class="module">
-            <div class="moduleHeader orange">Stuff I've Made</div>
+            <div class="moduleHeader orange">Software</div>
             <div class="moduleBody">
+              <h3>DocReady</h3>
+              <p>
+                A local-first health tracking app built to help people organize symptoms,
+                health stats, reports, and appointments.
+              </p>
+              <p class="tinyNote">
+                Status: Live
+              </p>
+
+              <hr />
+
+              <h3>VetReady</h3>
+              <p>
+                A pet health tracking app for logging symptoms, changes, notes, and vet visit details.
+              </p>
+              <p class="tinyNote">
+                Status: Live
+              </p>
+
+              <hr />
+
               <h3>Grit &amp; Flow Labs</h3>
               <p>
-                A small studio where I build apps, tools, and experiments that are meant to
+                A small studio where I build apps, tools, websites, and experiments that are meant to
                 feel good to use.
               </p>
               <p>
@@ -230,49 +360,164 @@
               <a class="textLink" href="https://gritandflowlabs.com" target="_blank" rel="noopener">
                 Visit Grit &amp; Flow Labs →
               </a>
+
+              <hr />
+
+              <h3>AlignPlay</h3>
+              <p>
+                An education platform in progress focused on standards-aligned interactive learning
+                experiences for teachers and students.
+              </p>
+              <p class="tinyNote">
+                Status: Building
+              </p>
             </div>
           </section>
         </section>
 
-        <section id="irl" class="contentSection">
+       <section id="irl" class="contentSection">
           <section class="module">
-            <div class="moduleHeader orange">IRL Projects</div>
+            <div class="moduleHeader orange">In the Real World</div>
+
             <div class="moduleBody">
-              <h3>Lee Holdings Group</h3>
               <p>
-                Real-world projects focused on land, planning, and long-term development.
+                Not everything I build lives in a code editor.
               </p>
+
               <p>
-                Slower timelines. Bigger consequences. Still intentional.
+                Some ideas take shape through software. Others take shape through land,
+                long-term planning, and projects that exist well beyond a computer
+                screen.
               </p>
-              <p class="tinyNote">
-                (This one lives firmly offline, but the site tracks the thinking.)
+
+              <p>
+                Lee Holdings Group is where I explore development from a different
+                perspective. It's slower than software, but that's part of what makes it
+                interesting. Every decision has a longer timeline and a lasting impact.
               </p>
-              <a class="textLink" href="https://leeholdingsgroup.netlify.app/" target="_blank" rel="noopener">
-                Visit Lee Holdings Group →
-              </a>
+
+              <p>
+                Working in both worlds has taught me that good planning, thoughtful
+                design, and patience matter no matter what you're building.
+              </p>
+
+              <p>
+                If you're curious about that side of my work, you can explore it below.
+              </p>
+
+              <p>
+                <a
+                  class="textLink"
+                  href="https://leeholdingsgroup.netlify.app/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Visit Lee Holdings Group →
+                </a>
+              </p>
             </div>
           </section>
         </section>
 
         <section id="writing" class="contentSection">
           <section class="module">
-            <div class="moduleHeader orange">Writing</div>
+            <div class="moduleHeader orange">The Bookshelf</div>
+
             <div class="moduleBody">
+              <h3>Why Is This a Meeting?</h3>
+
               <p>
-                I write about work, systems, meetings, and the friction people are expected
-                to normalize.
+                Meetings don't have to waste time—but too many of them do.
               </p>
+
               <p>
-                My first book lives here now too, which still feels a little wild.
+                I wrote <em>Why Is This a Meeting?</em> after spending years watching
+                teams sit through meetings that could have been emails, Slack messages,
+                or five-minute conversations.
               </p>
-              <a class="textLink" href="https://www.amazon.com/dp/B0GDPFPXLS" target="_blank" rel="noopener">
-                View the book →
-              </a>
+
+              <p>
+                The book introduces the TCAP Method, a simple framework for deciding
+                whether a meeting should happen in the first place and how to make the
+                ones that do actually worth everyone's time.
+              </p>
+
+              <p>
+                It's practical, honest, and written for people who are tired of
+                pretending every calendar invite is necessary.
+              </p>
+
+              <p>
+                <a
+                  class="textLink"
+                  href="https://www.amazon.com/dp/B0GDPFPXLS"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Get it on Amazon →
+                </a>
+              </p>
+
+
+              <hr />
+
+              <h3>What's Next?</h3>
+
+              <p>
+                I don't think this will be my last book.
+              </p>
+
+              <p>
+                I enjoy writing about work, education, technology, psychology, and the
+                little frustrations people experience but rarely talk about.
+              </p>
+
+              <p>
+                Safe to say... this bookshelf isn't staying this empty for long.
+              </p>
+
+              <hr />
+
+              <h3>Growing Collection</h3>
+
+              <div class="bookshelf">
+                <div class="book">
+                  <div class="bookCover">📘</div>
+                  <div class="bookTitle">Why Is This a Meeting?</div>
+                  <div class="bookStatus">✔ Published</div>
+                </div>
+
+                <div class="book">
+                  <div class="bookCover">📗</div>
+                  <div class="bookTitle">In Progress</div>
+                  <div class="bookStatus">Coming Soon</div>
+                </div>
+
+                <div class="book">
+                  <div class="bookCover">📕</div>
+                  <div class="bookTitle">Just an Idea</div>
+                  <div class="bookStatus">Coming Soon</div>
+                </div>
+
+                <div class="book">
+                  <div class="bookCover">📙</div>
+                  <div class="bookTitle">You'll See</div>
+                  <div class="bookStatus">One day.</div>
+                </div>
+              </div>
+
+              <p class="tinyNote">
+                Every book starts as an idea. These are just waiting for their turn.
+              </p>
+
+              <p class="tinyNote">
+                <strong>Shelf Capacity:</strong> 1 / ∞
+              </p>
             </div>
           </section>
         </section>
-      </section>
+
+        
     </main>
 
     <footer class="siteFooter">
