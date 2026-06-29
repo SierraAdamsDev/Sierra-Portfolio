@@ -1,41 +1,54 @@
-# Sierra Space ✨
+# SierraSpace
 
-A MySpace-inspired personal site designed to bring personality back to the web.
+A nostalgic, MySpace-inspired creator profile that blends retro web culture with modern front-end development.
 
-This is not a traditional portfolio.
-
-Instead of polished case studies and predictable layouts, this site reflects how I actually think, build, and experiment in real time.
+SierraSpace isn't a traditional portfolio. It's a living snapshot of what I'm building, learning, and creating. Inspired by the personality of the early internet, the site embraces experimentation while showcasing software, writing, entrepreneurship, and projects beyond the screen.
 
 ## Features
 
-- MySpace-style layout with modern responsiveness
-- “Top 8” reimagined as core skills
-- Theme toggle (because one version wasn’t enough)
-- Random thought generator
-- Interactive UI elements (hover states, effects)
-- Fully custom — no templates used
-
-## Purpose
-
-To explore what happens when you prioritize personality over perfection in web design.
-
-## Live Site
-https://sierra-space.netlify.app/
+* MySpace-inspired interface with a modern responsive layout
+* "Top 8" reimagined as core skills
+* Site-wide search
+* Light and dark theme toggle
+* Random thought generator
+* Optional cursor trail and retro UI interactions
+* Bookshelf showcasing published and future books
+* Dev Diary powered by live GitHub activity
+* Dedicated pages for software, offline projects, and writing
 
 ## Tech Stack
 
-- HTML
-- CSS
-- JavaScript
-- Netlify (deployment)
+* HTML5
+* CSS3
+* Vanilla JavaScript
+* GitHub REST API
+* Netlify
 
-## Notes
+## Design Philosophy
 
-Built intentionally to challenge modern portfolio expectations.
+Most portfolios focus on presenting finished work.
+
+SierraSpace focuses on documenting the person behind the work.
+
+The goal isn't to recreate MySpace—it's to bring back what made the early web memorable: personality, creativity, and the feeling that every website reflected its creator.
+
+As the project evolves, subtle Three.js interactions will be added to enhance the experience without losing the nostalgic feel that makes SierraSpace unique.
+
+## Live Site
+
+https://sierraspace.io/
+
+## What's Next
+
+* Add subtle Three.js interactions throughout the site
+* Continue expanding the Dev Diary
+* Grow the Bookshelf as new books are published
+* Keep evolving SierraSpace alongside everything I'm building
 
 ---
 
 ## License
 
-This project is shared for viewing and inspiration.  
-All written content and design elements remain the intellectual property of the author.
+This project is shared for viewing and inspiration.
+
+All written content, branding, artwork, and design elements remain the intellectual property of Sierra Adams unless otherwise noted.
