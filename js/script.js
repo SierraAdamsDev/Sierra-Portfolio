@@ -62,25 +62,6 @@ if (sparkleBtn) {
   });
 }
 
-/* Music toggle */
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicToggle");
-
-if (music && musicBtn) {
-  music.volume = 0.3;
-  let isPlaying = false;
-
-  musicBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-      music.play();
-      musicBtn.textContent = "🎵 Music: ON";
-    } else {
-      music.pause();
-      musicBtn.textContent = "🎵 Music: OFF";
-    }
-    isPlaying = !isPlaying;
-  });
-}
 
 const thoughts = [
   "Lowkey plotting something",

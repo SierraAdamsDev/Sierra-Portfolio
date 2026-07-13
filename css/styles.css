@@ -441,25 +441,74 @@ a:hover {
   display: none;
 }
 
-/* Profile Pic */
+/* Profile Area */
+
+.profileTop {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
 .profilePic {
+  position: relative;
+  isolation: isolate;
   width: 150px;
   height: 150px;
-  border: 2px solid #6699cc;
-  overflow: hidden;
-  background: #eee;
+  overflow: visible;
+  background: transparent;
+  border: 0;
 }
 
 .profilePic img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 1;
+  transition: opacity 180ms ease;
+}
+
+.profileThreeCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  z-index: 2;
+}
+
+.profileThreeReady img {
+  opacity: 0;
+}
+
+.profileThreeReady .profileThreeCanvas {
+  opacity: 1;
+}
+
+@media (max-width: 560px) {
+  .profileTop {
+    grid-template-columns: 1fr;
+  }
+
+  .profilePic {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profilePic {
+    pointer-events: none;
+  }
 }
 
 /* 3D hover accents */
 @media (hover: hover) and (pointer: fine) {
   .module,
-  .profilePic,
   .topFriendPic {
     transition:
       transform 120ms ease,
@@ -472,11 +521,6 @@ a:hover {
   .module:hover {
     transform: perspective(900px) rotateX(1deg) rotateY(-1deg) translateY(-2px);
     box-shadow: 8px 8px 0 rgba(31, 61, 43, 0.18);
-  }
-
-  .profilePic:hover {
-    transform: perspective(800px) rotateY(5deg) rotateX(2deg) translateY(-2px);
-    box-shadow: 6px 6px 0 rgba(31, 61, 43, 0.22);
   }
 
   .topFriend:hover .topFriendPic {
@@ -551,6 +595,256 @@ a:hover {
 .diaryEntry a {
   text-decoration: none;
   font-weight: bold;
+}
+
+/* Three.js Header Sparkle */
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1px;
+}
+
+.headerSparkle {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  margin-top: 4px;
+  margin-left: -1px;
+  cursor: default;
+}
+
+.headerSparkle canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 560px) {
+  .headerSparkle {
+    width: 26px;
+    height: 26px;
+    flex-basis: 26px;
+    margin-top: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headerSparkle {
+    pointer-events: none;
+  }
+}
+
+/* Three.js Profile Photo */
+
+.profilePic {
+  position: relative;
+  isolation: isolate;
+}
+
+.profilePic img {
+  display: block;
+  transition: opacity 180ms ease;
+}
+
+.profileThreeCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 180ms ease;
+  z-index: 2;
+}
+
+.profileThreeReady img {
+  opacity: 0;
+}
+
+.profileThreeReady .profileThreeCanvas {
+  opacity: 1;
+}
+
+/* Top 8 idle 3D movement */
+
+.top8Grid {
+  perspective: 900px;
+}
+
+.topFriend {
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: topFriendFloat 5.5s ease-in-out infinite;
+}
+
+.topFriendPic {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Stagger the movement so all eight do not move together */
+
+.topFriend:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.topFriend:nth-child(2) {
+  animation-delay: -0.7s;
+}
+
+.topFriend:nth-child(3) {
+  animation-delay: -1.4s;
+}
+
+.topFriend:nth-child(4) {
+  animation-delay: -2.1s;
+}
+
+.topFriend:nth-child(5) {
+  animation-delay: -2.8s;
+}
+
+.topFriend:nth-child(6) {
+  animation-delay: -3.5s;
+}
+
+.topFriend:nth-child(7) {
+  animation-delay: -4.2s;
+}
+
+.topFriend:nth-child(8) {
+  animation-delay: -4.9s;
+}
+
+@keyframes topFriendFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateZ(0);
+  }
+
+  25% {
+    transform:
+      translateY(-2px)
+      rotateX(2deg)
+      rotateY(-2deg)
+      translateZ(5px);
+  }
+
+  50% {
+    transform:
+      translateY(-4px)
+      rotateX(-2deg)
+      rotateY(2deg)
+      translateZ(9px);
+  }
+
+  75% {
+    transform:
+      translateY(-2px)
+      rotateX(1deg)
+      rotateY(3deg)
+      translateZ(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topFriend {
+    animation: none;
+  }
+}
+
+/* Music Player */
+
+.musicPlayer {
+  display: grid;
+  gap: 10px;
+}
+
+.musicTrackInfo {
+  display: grid;
+  gap: 3px;
+}
+
+.musicTrackInfo strong {
+  font-size: 14px;
+  color: #1F3D2B;
+}
+
+.musicTrackInfo span {
+  font-size: 12px;
+  color: #666;
+}
+
+.musicPlayer audio {
+  width: 100%;
+  height: 34px;
+}
+
+/* Three.js Dev Diary Charm */
+
+.devDiaryHeader {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  overflow: visible;
+}
+
+.devDiaryHeader span {
+  position: relative;
+  z-index: 2;
+}
+
+.devDiaryCharm {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+
+  margin-left: -10px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+
+  cursor: default;
+}
+
+.devDiaryThreeCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 560px) {
+  .devDiaryHeader {
+    min-height: 38px;
+  }
+
+  .devDiaryCharm {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+
+    margin-left: -8px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .devDiaryCharm {
+    pointer-events: none;
+  }
+}
+
+.projectLinks {
+  margin-top: 10px;
+  line-height: 1.8;
 }
 
 /* Responsive */

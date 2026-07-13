@@ -8,7 +8,7 @@
     name="description"
     content="A MySpace-inspired non-traditional personal portfolio for Sierra Adams."
   />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
@@ -18,6 +18,12 @@
       <div class="topHeaderInner">
         <div class="brandRow">
           <div class="brand">SierraSpace</div>
+
+          <div
+            id="headerSparkle"
+            class="headerSparkle"
+            aria-hidden="true"
+          ></div>
         </div>
 
         <div class="searchRow">
@@ -119,7 +125,7 @@
           <div class="moduleBody interestTable">
             <div class="interestRow">
               <div class="interestLabel">Apps</div>
-              <div class="interestValue">2 Live</div>
+              <div class="interestValue">3 Live</div>
             </div>
 
             <div class="interestRow">
@@ -144,15 +150,33 @@
 
             <div class="interestRow">
               <div class="interestLabel">Focus</div>
-              <div class="interestValue">Three.js</div>
+              <div class="interestValue">Back to school prep!</div>
             </div>
+          </div>
+        </section>
+
+        <section class="module">
+          <div class="moduleHeader blue">Now Playing</div>
+
+          <div class="moduleBody musicPlayer">
+            <div class="musicTrackInfo">
+              <strong>Erykah Badu — Cleva</strong>
+              <span>SierraSpace Soundtrack</span>
+            </div>
+
+            <audio id="bgMusic" controls loop preload="metadata">
+              <source
+                src="Erykah Badu - Cleva.mp3"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
           </div>
         </section>
 
         <section class="module">
           <div class="moduleHeader blue">Razzle Dazzle</div>
           <div class="moduleBody extrasRow">
-            <button class="msButton" id="musicToggle" type="button">🎵 Music: OFF</button>
             <button class="msButton" id="sparkleBtn" type="button">✨ Add Sparkles</button>
             <button class="msButton" id="thoughtBtn" type="button">💬 Random Thought</button>
             <button class="msButton" id="themeToggle" type="button">🌗 Theme</button>
@@ -231,8 +255,17 @@
               </div>
             </div>
           </section>
-          <section class="module">
-            <div class="moduleHeader orange">Dev Diary</div>
+          <section class="module devDiaryModule">
+            <div class="moduleHeader orange devDiaryHeader">
+              <div
+                id="devDiaryCharm"
+                class="devDiaryCharm"
+                aria-hidden="true"
+              ></div>
+
+              <span>Dev Diary</span>
+            </div>
+
             <div class="moduleBody">
               <p class="tinyNote">
                 Latest public GitHub activity from Sierra.
@@ -326,25 +359,71 @@
             <div class="moduleHeader orange">Software</div>
             <div class="moduleBody">
               <h3>DocReady</h3>
-              <p>
-                A local-first health tracking app built to help people organize symptoms,
-                health stats, reports, and appointments.
-              </p>
-              <p class="tinyNote">
-                Status: Live
-              </p>
 
-              <hr />
+                <p>
+                  A local-first health tracking app built to help people organize symptoms,
+                  health stats, reports, and appointments.
+                </p>
+
+                <p class="tinyNote">
+                  Status: Live
+                </p>
+
+                <p class="projectLinks">
+                  <a
+                    class="textLink"
+                    href="https://apps.apple.com/us/app/docready-log/id6773218052"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    🍎 Download on the App Store
+                  </a>
+                  <br />
+
+                  <a
+                    class="textLink"
+                    href="https://play.google.com/store/apps/details?id=com.gritandflowlabs.docready"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    ▶ Get it on Google Play
+                  </a>
+                </p>
+
+                <hr />
 
               <h3>VetReady</h3>
-              <p>
-                A pet health tracking app for logging symptoms, changes, notes, and vet visit details.
-              </p>
-              <p class="tinyNote">
-                Status: Live
-              </p>
 
-              <hr />
+                <p>
+                  A pet health tracking app for logging symptoms, changes, notes, and vet visit details.
+                </p>
+
+                <p class="tinyNote">
+                  Status: Live
+                </p>
+
+                <p class="projectLinks">
+                  <a
+                    class="textLink"
+                    href="https://apps.apple.com/us/app/vetready-log/id6783516361"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    🍎 Download on the App Store
+                  </a>
+                  <br />
+
+                  <a
+                    class="textLink"
+                    href="https://play.google.com/store/apps/details?id=com.gritandflowlabs.vetready"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    ▶ Get it on Google Play
+                  </a>
+                </p>
+
+                <hr />
 
               <h3>Grit &amp; Flow Labs</h3>
               <p>
@@ -354,9 +433,7 @@
               <p>
                 Ongoing. Always changing.
               </p>
-              <p class="tinyNote">
-                (This link opens a more polished corner of the internet.)
-              </p>
+
               <a class="textLink" href="https://gritandflowlabs.com" target="_blank" rel="noopener">
                 Visit Grit &amp; Flow Labs →
               </a>
@@ -364,13 +441,26 @@
               <hr />
 
               <h3>AlignPlay</h3>
-              <p>
-                An education platform in progress focused on standards-aligned interactive learning
-                experiences for teachers and students.
-              </p>
-              <p class="tinyNote">
-                Status: Building
-              </p>
+
+                <p>
+                  An education platform in progress focused on standards-aligned interactive learning
+                  experiences for teachers and students.
+                </p>
+
+                <p class="tinyNote">
+                  Status: Building
+                </p>
+
+                <p>
+                  <a
+                    class="textLink"
+                    href="https://alignplay.io"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Visit AlignPlay →
+                  </a>
+                </p>
             </div>
           </section>
         </section>
@@ -525,11 +615,16 @@
     </footer>
   </div>
 
-  <audio id="bgMusic" loop>
-    <source src="Erykah Badu - Cleva.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+</script>
 
-  <script src="script.js"></script>
+<script type="module" src="js/three/scene-manager.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
